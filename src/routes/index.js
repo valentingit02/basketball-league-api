@@ -1,9 +1,8 @@
 const router = require('express').Router();
-const auth = require('../middleware/auth'); // ← importás el middleware
 
-router.use('/auth',    require('./authRoutes'));         // login no se protege
-router.use('/teams',   auth, require('./teamRoutes'));   // ← protegido
-router.use('/players', auth, require('./playerRoutes')); // ← protegido
-router.use('/matches', auth, require('./matchRoutes'));  // ← protegido
+router.use('/auth',    require('./authRoutes'));
+router.use('/teams',   require('./teamRoutes'));
+router.use('/players', require('./playerRoutes'));
+router.use('/matches', require('./matchRoutes'));
 
 module.exports = router;
